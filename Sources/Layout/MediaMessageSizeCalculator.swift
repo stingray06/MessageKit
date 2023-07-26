@@ -28,18 +28,38 @@ import UIKit
 open class MediaMessageSizeCalculator: MessageSizeCalculator {
 
     open override func messageContainerSize(for message: MessageType) -> CGSize {
+        
         let maxWidth = messageContainerMaxWidth(for: message)
         let sizeForMediaItem = { (maxWidth: CGFloat, item: MediaItem) -> CGSize in
             if maxWidth < item.size.width {
                 // Maintain the ratio if width is too great
                 let height = maxWidth * item.size.height / item.size.width
+                print("April133",  CGSize(width: maxWidth, height: height))
                 return CGSize(width: maxWidth, height: height)
             }
             return item.size
         }
         switch message.kind {
         case .photo(let item):
-            return sizeForMediaItem(maxWidth, item)
+            guard let url = item.url else { return item.size}
+            if url.pathExtension == "jpg" || url.pathExtension == "pdf" || url.pathExtension == "png" || url.pathExtension == "jpeg" {
+                var width: Double = 0
+                var height: Double = 0
+                var multiplicator = item.size.height / item.size.width
+                switch multiplicator {
+                case 0..<1:
+                    width = UIScreen.main.bounds.width * 0.75
+                case 1:
+                    width = UIScreen.main.bounds.width * 0.75
+                default:
+                    width = UIScreen.main.bounds.width * 0.45
+                }
+                height = width * item.size.height / item.size.width
+                print("April13",  CGSize(width: width, height: height))
+                return CGSize(width: width, height: height)
+            } else {
+                return sizeForMediaItem(maxWidth, item)
+            }
         case .video(let item):
             return sizeForMediaItem(maxWidth, item)
         default:
