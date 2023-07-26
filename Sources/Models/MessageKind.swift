@@ -66,6 +66,8 @@ public enum MessageKind {
     ///   - MessagesLayoutDelegate: customCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator
     case custom(Any?)
 
+    case file(MediaItem)
+
     // MARK: - Not supported yet
 
 //    case system(String)
