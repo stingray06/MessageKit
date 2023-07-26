@@ -310,4 +310,8 @@ public extension MessagesLayoutDelegate {
     func customCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator {
         fatalError("Must return a CellSizeCalculator for MessageKind.custom(Any?)")
     }
+
+    func fileCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator? {
+        return nil
+    }
 }

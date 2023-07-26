@@ -176,9 +176,9 @@ class TextMessageDisplayDelegateTests: XCTestCase {
 }
 
 private class MockMessagesViewController: MessagesViewController, MessagesDisplayDelegate, MessagesLayoutDelegate {
-    func fileCellSizeCalculator(for message: MessageKit.MessageType, at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.CellSizeCalculator? {
-        return nil
-    }
+//    func fileCellSizeCalculator(for message: MessageKit.MessageType, at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.CellSizeCalculator? {
+//        return nil
+//    }
 
 
     func heightForLocation(message: MessageType, at indexPath: IndexPath, with maxWidth: CGFloat, in messagesCollectionView: MessagesCollectionView) -> CGFloat {

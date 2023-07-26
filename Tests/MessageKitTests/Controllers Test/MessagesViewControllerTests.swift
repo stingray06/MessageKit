@@ -247,9 +247,9 @@ final class MessagesViewControllerTests: XCTestCase {
 }
 
 private class MockLayoutDelegate: MessagesLayoutDelegate, MessagesDisplayDelegate {
-    func fileCellSizeCalculator(for message: MessageKit.MessageType, at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.CellSizeCalculator? {
-        return nil
-    }
+//    func fileCellSizeCalculator(for message: MessageKit.MessageType, at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.CellSizeCalculator? {
+//        return nil
+//    }
 
 
     // MARK: - LocationMessageLayoutDelegate
