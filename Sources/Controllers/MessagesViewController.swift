@@ -394,6 +394,17 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
             return cell
         case .custom:
             return messagesDataSource.customCell(for: message, at: indexPath, in: messagesCollectionView)
+        case .file:
+            if let cell = messagesDataSource.fileCell(for: message, at: indexPath, in: messagesCollectionView) {
+                return cell
+            } else {
+                let cell = messagesCollectionView.dequeueReusableCell(FileMessageCell.self, for: indexPath)
+                cell.configure(with: message, at: indexPath, and: messagesCollectionView)
+                return cell
+            }
+
+
+
         }
     }
 

@@ -186,6 +186,9 @@ public protocol MessagesDataSource: AnyObject {
     ///   - indexPath: The index path to dequeue the cell at
     ///   - messagesCollectionView: The `MessagesCollectionView` the cell is to be rendered in
     /// - Returns: A `UICollectionViewCell` that indicates a user is typing
+    ///
+    func fileCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell?
+
     func typingIndicator(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
 }
 
@@ -250,6 +253,10 @@ public extension MessagesDataSource {
     
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
         fatalError(MessageKitError.customDataUnresolvedCell)
+    }
+
+    func fileCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
+        return nil
     }
 
     func typingIndicator(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
