@@ -61,15 +61,16 @@ open class FileMessageCell: MessageContentCell {
             }
             let textMessageKind = message.kind.textMessageKind
             switch textMessageKind {
-            case .text(let text), .emoji(let text):
+            case .file(let item):
+                guard let shortName = item.url?.lastPathComponent else { return }
                 let textColor = displayDelegate.textColor(for: message, at: indexPath, in: messagesCollectionView)
-                messageLabel.text = text
+                messageLabel.text = shortName
                 messageLabel.textColor = textColor
                 if let font = messageLabel.messageLabelFont {
                     messageLabel.font = font
                 }
-            case .attributedText(let text):
-                messageLabel.attributedText = text
+//            case .attributedText(let text):
+//                messageLabel.attributedText = text
             default:
                 break
             }
