@@ -64,7 +64,11 @@ open class FileMessageCell: MessageContentCell {
             case .file(let item):
                 guard let shortName = item.url?.lastPathComponent else { return }
                 let textColor = displayDelegate.textColor(for: message, at: indexPath, in: messagesCollectionView)
-                messageLabel.text = shortName
+                if shortName == "file_29.svg" {
+                    messageLabel.text = "know know know knowfile_29.svg"
+                } else {
+                    messageLabel.text = shortName
+                }
                 messageLabel.textColor = textColor
                 if let font = messageLabel.messageLabelFont {
                     messageLabel.font = font
