@@ -39,11 +39,7 @@ open class FileMessageSizeCalculator: MessageSizeCalculator {
 
         case .file(let item):
             guard let shortUrl = item.url?.lastPathComponent else { return CGSize(width: 100, height: 100)}
-            if shortUrl == "file_29.svg" {
-                attributedText = NSAttributedString(string: "know know know know know know know knowknow know knowfile_29.svg", attributes: [.font: messageLabelFont])
-            } else {
                 attributedText = NSAttributedString(string: shortUrl, attributes: [.font: messageLabelFont])
-            }
         default:
             fatalError("messageContainerSize received unhandled MessageDataType: \(message.kind)")
         }
