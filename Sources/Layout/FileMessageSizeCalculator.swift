@@ -25,7 +25,7 @@ open class FileMessageSizeCalculator: MessageSizeCalculator {
     open override func messageContainerMaxWidth(for message: MessageType) -> CGFloat {
         let maxWidth = super.messageContainerMaxWidth(for: message)
         let textInsets = messageLabelInsets(for: message)
-        return maxWidth - textInsets.horizontal// + 30
+        return maxWidth - textInsets.horizontal - 30
     }
 
     open override func messageContainerSize(for message: MessageType) -> CGSize {
