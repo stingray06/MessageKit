@@ -52,7 +52,7 @@ open class FileMessageSizeCalculator: MessageSizeCalculator {
 
         let messageInsets = messageLabelInsets(for: message)
         messageContainerSize.width += messageInsets.horizontal
-        messageContainerSize.width = messageContainerSize.width + 30
+     //   messageContainerSize.width = messageContainerSize.width// + 30
         messageContainerSize.height += messageInsets.vertical
 
         return messageContainerSize
