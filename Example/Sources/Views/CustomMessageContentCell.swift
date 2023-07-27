@@ -81,7 +81,7 @@ class CustomMessageContentCell: MessageCollectionViewCell {
     }
     
     func setupSubviews() {
-        self.messageContainerView.layer.cornerRadius = 5
+     //   self.messageContainerView.layer.cornerRadius = 5
         
         self.contentView.addSubview(self.cellTopLabel)
         self.contentView.addSubview(self.messageContainerView)
