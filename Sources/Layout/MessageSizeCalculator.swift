@@ -211,10 +211,10 @@ open class MessageSizeCalculator: CellSizeCalculator {
     open func messageTimeLabelSize(for message: MessageType, at indexPath: IndexPath) -> CGSize {
         let dataSource = messagesLayout.messagesDataSource
         guard let attributedText = dataSource.messageTimestampLabelAttributedText(for: message, at: indexPath) else {
-            "April zero"
             return .zero
         }
         let size = attributedText.size()
+        print("April size", size)
         return CGSize(width: size.width, height: size.height)
     }
 
