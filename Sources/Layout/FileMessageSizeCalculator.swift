@@ -12,7 +12,7 @@ import UIKit
 open class FileMessageSizeCalculator: MessageSizeCalculator {
 
     public var incomingMessageLabelInsets = UIEdgeInsets(top: 7, left: 38, bottom: 7, right: 14)
-    public var outgoingMessageLabelInsets = UIEdgeInsets(top: 7, left: 38, bottom: 7, right: 18)
+    public var outgoingMessageLabelInsets = UIEdgeInsets(top: 7, left: 38, bottom: 7, right: 22)
 
     public var messageLabelFont = UIFont.preferredFont(forTextStyle: .body)
 
