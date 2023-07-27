@@ -214,7 +214,6 @@ open class MessageSizeCalculator: CellSizeCalculator {
             return .zero
         }
         let size = attributedText.size()
-        print("April size", size)
         return CGSize(width: size.width, height: size.height)
     }
 
