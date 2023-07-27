@@ -65,7 +65,7 @@ open class FileMessageCell: MessageContentCell {
                 guard let shortName = item.url?.lastPathComponent else { return }
                 let textColor = displayDelegate.textColor(for: message, at: indexPath, in: messagesCollectionView)
                 if shortName == "file_29.svg" {
-                    messageLabel.text = "know know know knowfile_29.svg"
+                    messageLabel.text = "know know know know know know know knowknow know knowfile_29.svg"
                 } else {
                     messageLabel.text = shortName
                 }
